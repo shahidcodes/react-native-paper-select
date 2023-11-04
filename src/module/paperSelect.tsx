@@ -23,7 +23,7 @@ import type {
   PaperSelectTextInputProps,
 } from '../interface/paperSelect.interface';
 import type { InternalTheme } from 'react-native-paper/lib/typescript/src/types';
-
+// test1
 const PaperSelect = ({
   // Required props
   label,
@@ -40,7 +40,7 @@ const PaperSelect = ({
   textInputMode = 'flat',
   theme: themeOverrides,
   inputRef,
-
+  searchInputAsOption = false,
   // Localization props
   dialogTitle,
   selectAllText = 'Select all',
@@ -164,7 +164,7 @@ const PaperSelect = ({
     const indexSelected = selectedData.findIndex((val) => val._id === item._id);
     if (indexSelected > -1) {
       // selectedData.splice(indexSelected, 1);
-      selectedData = [];
+      selectedData = [item];
     } else {
       selectedData = [];
       selectedData.push(item);
@@ -242,6 +242,12 @@ const PaperSelect = ({
     const newData = arrayHolder.filter((item) =>
       item.value.toLowerCase().includes(text.toLowerCase())
     );
+    if (searchInputAsOption) {
+      newData.push({
+        _id: 'searchInputAsOption',
+        value: text,
+      });
+    }
     setList(newData);
   };
 

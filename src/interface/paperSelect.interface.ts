@@ -47,6 +47,7 @@ export interface PaperSelectProps {
   textInputMode?: TextInputProps['mode'];
   theme?: ThemeProp;
   inputRef?: MutableRefObject<any>;
+  searchInputAsOption?: boolean;
 
   // Localization props
   dialogTitle?: ReactNode;

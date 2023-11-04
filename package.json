@@ -80,8 +80,8 @@
     "react": "*",
     "react-native": "*",
     "react-native-paper": "*",
-    "react-native-vector-icons": "*",
     "react-native-safe-area-context": "*",
+    "react-native-vector-icons": "*",
     "typescript": "*"
   },
   "jest": {
